@@ -8,10 +8,10 @@ export const Finish = ({
   setInCorrectAnswers,
   elapsedTime,
 }) => {
-  // function setAnswersNull() {
-  //   setCorrectAnswers(0);
-  //   setInCorrectAnswers(0);
-  // }
+  function setAnswersNull() {
+    setCorrectAnswers(0);
+    setInCorrectAnswers(0);
+  }
   return (
     <>
       <div className="Finish">
@@ -42,7 +42,9 @@ export const Finish = ({
             type="button"
             className="Finish__button button-play button"
             value={`Play again`}
-            // onClick={setAnswersNull()}
+            onClick={() => {
+              setAnswersNull()
+            }}
           />
         </Link>
         <Link to="/home">
@@ -50,6 +52,9 @@ export const Finish = ({
             type="button"
             className="Finish__button button-home button"
             value={"Go home"}
+            onClick={() => {
+              setAnswersNull()
+            }}
           />
         </Link>
         </div>
