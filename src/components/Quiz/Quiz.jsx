@@ -1,3 +1,4 @@
+import "./Quiz.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Question } from "../Question/Question";
@@ -7,15 +8,14 @@ export const Quiz = ({
   correctAnswers,
   setCorrectAnswers,
   inCorrectAnswers,
-  setIncorrectAnswers,
-  endTest
+  setInCorrectAnswers,
+  endTest,
 }) => {
   const [numberQuestion, setNumberQuestion] = useState(1);
   const [currentQuestion, setCurrentQuestion] = useState(
     quiz[numberQuestion - 1]
   );
   const [selectedAnswer, setSelectedAnswer] = useState(null);
-
   useEffect(() => {
     setCurrentQuestion(quiz[numberQuestion - 1]);
   }, [numberQuestion, quiz]);
@@ -28,34 +28,40 @@ export const Quiz = ({
     if (answer === question.correct_answer) {
       setCorrectAnswers(correctAnswers + 1);
     } else {
-      setIncorrectAnswers(inCorrectAnswers + 1);
+      setInCorrectAnswers(inCorrectAnswers + 1);
     }
   }
 
   const getNextQuestion = () => {
+    const inputElement = document.querySelector(".question__button");
+    console.log(inputElement.checked)
     if (selectedAnswer !== null) {
       countAnswer(selectedAnswer, currentQuestion);
       setSelectedAnswer(null);
       setNumberQuestion(numberQuestion + 1);
-    } 
+      inputElement.classList.remove("question__button_red");
+    } else {
+      inputElement.classList.add("question__button_red");
+    }
   };
-
-  console.log(correctAnswers, inCorrectAnswers);
 
   return (
     <>
       <div className="Quiz">
-        <div className="Quiz__question">
-          <div className="Quiz__number">Question №{numberQuestion}</div>
-          <Question
-            question={currentQuestion}
-            selectedAnswer={selectedAnswer}
-            onAnswerChange={handleAnswerChange}
-          />
+        <div className="Quiz__question question">
+          <div className="question__number">Question №{numberQuestion}</div>
+          <div className="question__text">
+            <Question
+              question={currentQuestion}
+              selectedAnswer={selectedAnswer}
+              onAnswerChange={handleAnswerChange}
+            />
+          </div>
+
           {numberQuestion < 10 ? (
             <input
               type="button"
-              className="Quiz__button-next"
+              className="question__button-next question__button button"
               value={"Next question"}
               onClick={getNextQuestion}
             />
@@ -63,7 +69,7 @@ export const Quiz = ({
             <Link to="/finish">
               <input
                 type="button"
-                className="Quiz__button-result"
+                className="question__button-result question__button question__button_red button"
                 value={"See result"}
                 onClick={() => {
                   countAnswer(selectedAnswer, currentQuestion);
@@ -73,11 +79,11 @@ export const Quiz = ({
             </Link>
           )}
         </div>
-        <div className="Quiz__count-answers">
-          <div className="Quiz__count-answers_correct">
+        <div className="question__count-answers">
+          <div className="question__count-answers_correct">
             Correct answers: {correctAnswers}
           </div>
-          <div className="Quiz__count-answers_incorrect">
+          <div className="question__count-answers_incorrect">
             Incorrect answers: {inCorrectAnswers}
           </div>
         </div>

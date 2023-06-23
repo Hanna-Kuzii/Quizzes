@@ -1,0 +1,45 @@
+@charset "UTF-8";
+.Item {
+  padding: 15px;
+  margin: 5px 0;
+  -webkit-box-shadow: 4px 2px 6px rgba(0, 0, 0, 0.16), 4px 2px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 4px 2px 6px rgba(0, 0, 0, 0.16), 4px 2px 6px rgba(0, 0, 0, 0.23);
+  display: grid;
+  grid-template-columns: 1.9fr 0.6fr 0.5fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: ". . .";
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+.Item:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.Item__title {
+  text-align: left;
+}
+.Item__name {
+  margin-bottom: 5px;
+  font-style: italic;
+}
+.Item__value {
+  font-weight: 600;
+}
+.Item__button {
+  background-color: #3D8C40; /* Колір фону */
+  border: none; /* Відсутність рамки */
+  color: white; /* Колір тексту */
+  padding: 10px 20px; /* Відступи всередині кнопки */
+  text-align: center; /* Вирівнювання тексту по центру */
+  display: inline-block; /* Показувати як блочний елемент, але без відступів */
+  font-size: 1em;
+  border-radius: 4px; /* Закруглені кути */
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+.Item__button:hover {
+  background-color: #275A29; /* Колір фону при наведенні курсора */
+}/*# sourceMappingURL=Item.css.map */

@@ -1,0 +1,31 @@
+.Quiz .question__number {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.Quiz .question__button {
+  margin: 30px 0;
+  background-color: #A4D6A5;
+  color: #000;
+  padding: 15px 30px;
+  font-size: 1em;
+  border-radius: 10px;
+}
+.Quiz .question__button_red {
+  -webkit-box-shadow: 0 0 8px 2px rgba(255, 0, 0, 0.5);
+          box-shadow: 0 0 8px 2px rgba(255, 0, 0, 0.5);
+}
+.Quiz .question__button:hover {
+  background-color: #69896A;
+  color: #fff;
+}
+.Quiz .question__count-answers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 30px;
+  font-style: italic;
+  font-size: 0.9em;
+}/*# sourceMappingURL=Quiz.css.map */

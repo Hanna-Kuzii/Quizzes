@@ -1,0 +1,31 @@
+@import "../loader.css";
+.Home {
+  text-align: center;
+}
+.Home__header {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5em;
+}
+.Home .random-quiz {
+  margin-bottom: 20px;
+}
+.Home .random-quiz__header {
+  margin-bottom: 10px;
+}
+.Home .random-quiz__button {
+  padding: 10px 40px;
+  text-align: center;
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  display: inline-block;
+  font-size: 1.1em;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+.Home .random-quiz__button:hover {
+  background-color: #70bf73;
+}/*# sourceMappingURL=Home.css.map */

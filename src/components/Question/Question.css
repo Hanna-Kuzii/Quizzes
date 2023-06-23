@@ -1,0 +1,52 @@
+@charset "UTF-8";
+.Question__header {
+  margin: 20px 0;
+  font-size: 1.4em;
+}
+.Question__answers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 30px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.Question__answer_radiobutton {
+  display: none; /* Приховати оригінальну радіокнопку */
+}
+.Question__answer_radiobutton + label {
+  position: relative;
+  padding-left: 25px; /* Відступ лейбла від лівого краю */
+  cursor: pointer;
+}
+.Question__answer_radiobutton + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #A4D6A5;
+  border-radius: 50%;
+}
+.Question__answer_radiobutton:checked + label:before {
+  background-color: #A4D6A5;
+}
+.Question__answer_radiobutton + label:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.Question__answer_radiobutton:checked + label:after {
+  display: block;
+  position: absolute;
+  left: 6px;
+  top: 8px;
+  width: 7px;
+  height: 7px;
+  background: white;
+  border-radius: 50%;
+}/*# sourceMappingURL=Question.css.map */

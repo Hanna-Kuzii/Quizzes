@@ -1,16 +1,22 @@
+import './Item.css';
 import { Link } from "react-router-dom";
 
 export const Item = ({ test, setChoosedQiuz, startTest }) => {
-  // console.log("oneee", test);
   return (
     <>
-      <div className="item">
-        <div className="item__title">Name of quiz: {test[0].category}</div>
-        <div className="item__length">{test.length} questions</div>
+      <div className="Item">
+        <div className="Item__title">
+          <div className="Item__name">Name of quiz:</div>
+          <div className="Item__value">{test[0].category}</div>
+        </div>
+        <div className="Item__length">
+          <div className="Item__value">{test.length}</div>
+          <div className="Item__name">questions</div>
+        </div>
         <Link to="/play">
           <input
             type="button"
-            className="item__button"
+            className="Item__button"
             value={"Choose quiz"}
             onClick={() => {
               setChoosedQiuz(test);

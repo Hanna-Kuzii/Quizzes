@@ -1,0 +1,13 @@
+.List__header {
+  margin: 20px 0;
+}
+.List__quizzes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}/*# sourceMappingURL=List.css.map */

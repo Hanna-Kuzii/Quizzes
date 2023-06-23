@@ -1,4 +1,5 @@
 import "./App.css";
+import "./reset.css";
 import { useEffect, useState } from "react";
 import { getTest } from "./api/api";
 import { Home } from "./components/Home/Home";
@@ -12,11 +13,13 @@ function App() {
   const [randomQuiz, setRandomQuiz] = useState([]);
   const [choosedQiuz, setChoosedQuiz] = useState([]);
   const [correctAnswers, setCorrectAnswers] = useState(0);
-  const [inCorrectAnswers, setIncorrectAnswers] = useState(0);
+  const [inCorrectAnswers, setInCorrectAnswers] = useState(0);
   const [playingQiuz, setPlayingQuiz] = useState([]);
   const [startTime, setStartTime] = useState(null);
   const [endTime, setEndTime] = useState(null);
   const [elapsedTime, setElapsedTime] = useState(null);
+
+console.log(correctAnswers, inCorrectAnswers)
 
   function getRandomNumber() {
     const min = 9;
@@ -114,7 +117,7 @@ function App() {
               correctAnswers={correctAnswers}
               setCorrectAnswers={setCorrectAnswers}
               inCorrectAnswers={inCorrectAnswers}
-              setIncorrectAnswers={setIncorrectAnswers}
+              setInCorrectAnswers={setInCorrectAnswers}
               startTest={startTest}
               endTest={endTest}
             />
@@ -127,6 +130,8 @@ function App() {
             <Finish
               correctAnswers={correctAnswers}
               inCorrectAnswers={inCorrectAnswers}
+              setCorrectAnswers={setCorrectAnswers}
+              setInCorrectAnswers={setInCorrectAnswers}
               elapsedTime={elapsedTime}
             />
           }

@@ -1,37 +1,59 @@
+import "./Finish.css";
 import { Link } from "react-router-dom";
 
-export const Finish = ({ correctAnswers, inCorrectAnswers, elapsedTime }) => {
+export const Finish = ({
+  correctAnswers,
+  inCorrectAnswers,
+  setCorrectAnswers,
+  setInCorrectAnswers,
+  elapsedTime,
+}) => {
+  // function setAnswersNull() {
+  //   setCorrectAnswers(0);
+  //   setInCorrectAnswers(0);
+  // }
   return (
     <>
-      <div className="finish">
-        <div>
-          <div className="finish__results">
-            <div className="finish__header">
-              Your results: {correctAnswers * 10} points
-            </div>
-            <div className="finish__correct">
-              Correct answers: {correctAnswers}
-            </div>
-            <div className="finish__incorrect">
-              Incorrect answers: {inCorrectAnswers}
-            </div>
-            <div className="finish__time">Your time: {Math.round(elapsedTime / 1000)} s</div>
+      <div className="Finish">
+        <div className="Finish__results">
+          <div className="Finish__header">
+            Your results: {correctAnswers * 10} points
           </div>
-          <Link to="/home">
-            <input
-              type="button"
-              className="finish__button button-play"
-              value={`Play again`}
-            />
-          </Link>
-          <Link to="/home">
-            <input
-              type="button"
-              className="finish__button button-home"
-              value={"Go home"}
-            />
-          </Link>
+          <div className="Finish__statistic statistic">
+            <div className="statistic__header">Your statistic:</div>
+            <div>
+              <div className="statistic__answers">
+                <div className="statistic__correct">
+                  Correct answers: {correctAnswers}
+                </div>
+                <div className="statistic__incorrect">
+                  Incorrect answers: {inCorrectAnswers}
+                </div>
+              </div>
+            </div>
+            <div className="statistic__time">
+              Your time: {Math.round(elapsedTime / 1000)} s
+            </div>
+          </div>
         </div>
+        <div className="Finish__buttons">
+        <Link to="/play">
+          <input
+            type="button"
+            className="Finish__button button-play button"
+            value={`Play again`}
+            // onClick={setAnswersNull()}
+          />
+        </Link>
+        <Link to="/home">
+          <input
+            type="button"
+            className="Finish__button button-home button"
+            value={"Go home"}
+          />
+        </Link>
+        </div>
+
       </div>
     </>
   );

@@ -1,0 +1,10 @@
+.List {
+  &__header {
+    margin: 20px 0;
+  }
+  &__quizzes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
