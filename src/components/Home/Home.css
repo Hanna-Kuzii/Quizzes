@@ -35,7 +35,8 @@
 }
 .Home__statistic {
   position: absolute;
-  left: 10px;
+  right: 0;
+  top: 42px;
   padding: 10px 20px;
   background-color: #81c884;
   border: none;
@@ -53,4 +54,25 @@
   background-color: #70bf73;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+@media (max-width: 1025px) {
+  .Home__random-quiz {
+    text-align: left;
+  }
+}
+@media (max-width: 769px) {
+  .Home__statistic {
+    top: 71px;
+  }
+}
+@media (max-width: 481px) {
+  .Home__statistic {
+    position: static;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .Home__random-quiz {
+    text-align: center;
+  }
 }/*# sourceMappingURL=Home.css.map */

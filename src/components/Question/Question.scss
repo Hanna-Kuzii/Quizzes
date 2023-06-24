@@ -1,7 +1,7 @@
 .Question {
-  &__header {
+  &__title {
     margin: 20px 0;
-    font-size: 1.4em;
+    font-size: 1.3em;
   }
 
   &__answers {
@@ -58,4 +58,13 @@
 }
 }
 
+
+@media (max-width: 769px) {
+  // .Question {
+  //   &__title, &__answers {
+  //     font-size: 1em;
+  //   }
+    
+  // }
+}
 

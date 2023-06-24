@@ -24,10 +24,11 @@
 .Statistic__answers :first-child {
   margin-bottom: 10px;
 }
+.Statistic__chart {
+  height: 200px;
+}
 .Statistic__pie {
   margin: 0 auto;
-  width: 200px;
-  height: 200px;
 }
 .Statistic__button {
   margin-top: 30px;
@@ -42,4 +43,15 @@
 .Statistic__button:hover {
   color: #000;
   background-color: #88a788;
+}
+
+@media (max-width: 320px) {
+  .Statistic__chart {
+    height: 150px;
+  }
+  .Statistic__button {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
 }/*# sourceMappingURL=Statistic.css.map */

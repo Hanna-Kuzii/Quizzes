@@ -24,11 +24,11 @@
     }
   }
   &__chart {
+    height: 200px;
   }
   &__pie {
     margin: 0 auto;
-    width: 200px;
-    height: 200px;
+
   }
 
   &__button {
@@ -46,4 +46,16 @@
   }
 }
 
+@media (max-width: 320px) {
+  .Statistic {
+    &__chart {
+      height: 150px;
+    }
 
+    &__button {
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+    }
+  }
+}

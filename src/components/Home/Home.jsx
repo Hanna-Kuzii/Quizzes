@@ -13,7 +13,7 @@ export const Home = ({ tests, setChoosedQiuz, startTest }) => {
         <Link to="/statistic">
           <input
             type="button"
-            value="Your statistic"
+            value="Statistic"
             className="Home__statistic"
           />
         </Link>

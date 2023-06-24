@@ -8,7 +8,7 @@ export const Question = ({ question, selectedAnswer, onAnswerChange }) => {
   return (
     <>
       <div className="Question">
-        <div className="Question__header">{question.question}</div>
+        <div className="Question__title">{question.question}</div>
         <div className="Question__answers">
           {answers.map((answer, index) => (
             <div key={index} className="Question__answer">

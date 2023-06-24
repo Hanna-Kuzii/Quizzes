@@ -3,6 +3,7 @@
   padding: 20px 5vw;
   font-size: 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16), 0 2px 6px rgba(0, 0, 0, 0.23);
+
 }
 
 .button {
@@ -15,4 +16,10 @@
 
 input {
   cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .App {
+    font-size: 15px;
+  }
 }

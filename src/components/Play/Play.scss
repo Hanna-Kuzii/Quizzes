@@ -3,13 +3,13 @@
   font-size: 1.5em;
 
   &__buttons {
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     gap: 30px;
   }
 
   &__button {
-    margin-top: 30px;
     width: 150px;
     padding: 10px 0;
     color: #fff;
@@ -32,6 +32,35 @@
     background-color: #396d39;
     &:hover {
       background-color: #30e430;
+    }
+  }
+}
+
+@media (max-width: 769px) {
+  .Play {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 481px) {
+  .Play {
+    &__buttons {
+      gap: 20px;
+    }
+    &__button {
+      width: 100px;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .Play {
+    &__buttons {
+      flex-direction: column;
+    }
+    &__button {
+      margin: 0;
+      width: 150px;
     }
   }
 }

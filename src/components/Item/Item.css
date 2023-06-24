@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .Item {
   padding: 15px;
   margin: 5px 0;
@@ -7,6 +6,9 @@
   display: grid;
   grid-template-columns: 1.9fr 0.6fr 0.5fr;
   grid-template-rows: 1fr;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
   grid-template-areas: ". . .";
   -webkit-transition: -webkit-transform 0.5s ease;
   transition: -webkit-transform 0.5s ease;
@@ -28,17 +30,40 @@
   font-weight: 600;
 }
 .Item__button {
-  background-color: #3D8C40; /* Колір фону */
-  border: none; /* Відсутність рамки */
-  color: white; /* Колір тексту */
-  padding: 10px 20px; /* Відступи всередині кнопки */
-  text-align: center; /* Вирівнювання тексту по центру */
-  display: inline-block; /* Показувати як блочний елемент, але без відступів */
+  background-color: #3d8c40;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
   font-size: 1em;
-  border-radius: 4px; /* Закруглені кути */
+  border-radius: 4px;
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
 }
 .Item__button:hover {
-  background-color: #275A29; /* Колір фону при наведенні курсора */
+  background-color: #275a29;
+}
+
+@media (max-width: 769px) {
+  .Item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 5px;
+  }
+  .Item__title, .Item__length {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 5px;
+  }
 }/*# sourceMappingURL=Item.css.map */

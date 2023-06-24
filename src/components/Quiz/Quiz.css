@@ -3,7 +3,7 @@
   font-weight: 600;
 }
 .Quiz .question__button {
-  margin: 30px 0;
+  margin: 20px 0;
   background-color: #A4D6A5;
   color: #000;
   padding: 15px 30px;
@@ -27,5 +27,5 @@
           justify-content: center;
   gap: 30px;
   font-style: italic;
-  font-size: 0.9em;
+  font-size: 0.8em;
 }/*# sourceMappingURL=Quiz.css.map */
