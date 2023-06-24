@@ -7,11 +7,13 @@ export const Finish = ({
   setCorrectAnswers,
   setInCorrectAnswers,
   elapsedTime,
+  statTime,
 }) => {
   function setAnswersNull() {
     setCorrectAnswers(0);
     setInCorrectAnswers(0);
   }
+  console.log(statTime, "fiiinnn statt", elapsedTime);
   return (
     <>
       <div className="Finish">
@@ -34,31 +36,36 @@ export const Finish = ({
             <div className="statistic__time">
               Your time: {Math.round(elapsedTime / 1000)} s
             </div>
+            <div className="statistic__avtrage-time_quiz">
+              Average time in this test{" "}
+              {Math.round(elapsedTime / 1000) /
+                (correctAnswers + inCorrectAnswers)}{" "}
+              s
+            </div>
           </div>
         </div>
         <div className="Finish__buttons">
-        <Link to="/play">
-          <input
-            type="button"
-            className="Finish__button button-play button"
-            value={`Play again`}
-            onClick={() => {
-              setAnswersNull()
-            }}
-          />
-        </Link>
-        <Link to="/home">
-          <input
-            type="button"
-            className="Finish__button button-home button"
-            value={"Go home"}
-            onClick={() => {
-              setAnswersNull()
-            }}
-          />
-        </Link>
+          <Link to="/play">
+            <input
+              type="button"
+              className="Finish__button button-play button"
+              value={`Play again`}
+              onClick={() => {
+                setAnswersNull();
+              }}
+            />
+          </Link>
+          <Link to="/home">
+            <input
+              type="button"
+              className="Finish__button button-home button"
+              value={"Go home"}
+              onClick={() => {
+                setAnswersNull();
+              }}
+            />
+          </Link>
         </div>
-
       </div>
     </>
   );

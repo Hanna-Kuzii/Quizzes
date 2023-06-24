@@ -9,6 +9,14 @@ export const Quiz = ({
   setCorrectAnswers,
   inCorrectAnswers,
   setInCorrectAnswers,
+  statCorrectAnswers,
+  setStatCorrectAnswers,
+  statInCorrectAnswers,
+  setStatInCorrectAnswers,
+  statQuizzes,
+  countStatQuizzes,
+  countStatQuestions,
+  statQuestions,
   endTest,
 }) => {
   const [numberQuestion, setNumberQuestion] = useState(1);
@@ -25,16 +33,31 @@ export const Quiz = ({
   };
 
   function countAnswer(answer, question) {
+    countStatQuestions(statQuestions + 1);
+
     if (answer === question.correct_answer) {
       setCorrectAnswers(correctAnswers + 1);
+      setStatCorrectAnswers(statCorrectAnswers + 1);
     } else {
       setInCorrectAnswers(inCorrectAnswers + 1);
+      setStatInCorrectAnswers(statInCorrectAnswers + 1);
     }
   }
+  const inputElement = document.querySelector(".Question__answers");
+
+  const seeResults = () => {
+    if (selectedAnswer === null) {
+      inputElement.classList.add("question__button_red");
+      return;
+    } else {
+      countAnswer(selectedAnswer, currentQuestion);
+      endTest();
+      countStatQuizzes(statQuizzes + 1);
+      inputElement.classList.remove("question__button_red");
+    }
+  };
 
   const getNextQuestion = () => {
-    const inputElement = document.querySelector(".question__button");
-    console.log(inputElement.checked)
     if (selectedAnswer !== null) {
       countAnswer(selectedAnswer, currentQuestion);
       setSelectedAnswer(null);
@@ -48,45 +71,61 @@ export const Quiz = ({
   return (
     <>
       <div className="Quiz">
-        <div className="Quiz__question question">
-          <div className="question__number">Question №{numberQuestion}</div>
-          <div className="question__text">
-            <Question
-              question={currentQuestion}
-              selectedAnswer={selectedAnswer}
-              onAnswerChange={handleAnswerChange}
-            />
-          </div>
+        {currentQuestion !== undefined ? (
+          <>
+            <div className="Quiz__question question">
+              <div className="question__number">Question №{numberQuestion}</div>
+              <div className="question__text">
+                <Question
+                  question={currentQuestion}
+                  selectedAnswer={selectedAnswer}
+                  onAnswerChange={handleAnswerChange}
+                />
+              </div>
 
-          {numberQuestion < 10 ? (
+              {numberQuestion < 10 ? (
+                <input
+                  type="button"
+                  className="question__button-next question__button button"
+                  value={"Next question"}
+                  onClick={getNextQuestion}
+                />
+              ) : selectedAnswer === null ? (
+                <input
+                  type="button"
+                  className="question__button-result question__button button"
+                  value={"See result"}
+                  onClick={seeResults}
+                />
+              ) : (
+                <Link to="/finish">
+                  <input
+                    type="button"
+                    className="question__button-result question__button button"
+                    value={"See result"}
+                    onClick={seeResults}
+                  />
+                </Link>
+              )}
+            </div>
+            <div className="question__count-answers">
+              <div className="question__count-answers_correct">
+                Correct answers: {correctAnswers}
+              </div>
+              <div className="question__count-answers_incorrect">
+                Incorrect answers: {inCorrectAnswers}
+              </div>
+            </div>
+          </>
+        ) : (
+          <Link to="/home">
             <input
               type="button"
-              className="question__button-next question__button button"
-              value={"Next question"}
-              onClick={getNextQuestion}
+              className="Statistic__button button"
+              value={"Go home and play"}
             />
-          ) : (
-            <Link to="/finish">
-              <input
-                type="button"
-                className="question__button-result question__button question__button_red button"
-                value={"See result"}
-                onClick={() => {
-                  countAnswer(selectedAnswer, currentQuestion);
-                  endTest();
-                }}
-              />
-            </Link>
-          )}
-        </div>
-        <div className="question__count-answers">
-          <div className="question__count-answers_correct">
-            Correct answers: {correctAnswers}
-          </div>
-          <div className="question__count-answers_incorrect">
-            Incorrect answers: {inCorrectAnswers}
-          </div>
-        </div>
+          </Link>
+        )}
       </div>
     </>
   );

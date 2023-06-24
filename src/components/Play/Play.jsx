@@ -8,7 +8,14 @@ export const Play = ({
   setCorrectAnswers,
   inCorrectAnswers,
   setInCorrectAnswers,
-  startTest,
+  statCorrectAnswers,
+  setStatCorrectAnswers,
+  statInCorrectAnswers,
+  setStatInCorrectAnswers,
+  statQuizzes,
+  countStatQuizzes,
+  countStatQuestions,
+  statQuestions,
   endTest,
 }) => {
   return (
@@ -22,11 +29,18 @@ export const Play = ({
               setCorrectAnswers={setCorrectAnswers}
               inCorrectAnswers={inCorrectAnswers}
               setInCorrectAnswers={setInCorrectAnswers}
+              statCorrectAnswers={statCorrectAnswers}
+              setStatCorrectAnswers={setStatCorrectAnswers}
+              statInCorrectAnswers={statInCorrectAnswers}
+              setStatInCorrectAnswers={setStatInCorrectAnswers}
+              statQuizzes={statQuizzes}
+              countStatQuizzes={countStatQuizzes}
+              statQuestions={statQuestions}
+              countStatQuestions={countStatQuestions}
               endTest={endTest}
             />
           }
         </div>
-
         <div className="Play__buttons">
           <Link to="/home">
             <input
@@ -44,7 +58,10 @@ export const Play = ({
               type="button"
               className="Play__finish Play__button button"
               value={"Finish"}
-              onClick={endTest}
+              onClick={() => {
+                endTest();
+                countStatQuizzes(statQuizzes + 1);
+              }}
             />
           </Link>
         </div>

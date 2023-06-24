@@ -1,0 +1,45 @@
+.Statistic {
+  text-align: center;
+}
+.Statistic__title {
+  margin-bottom: 30px;
+  font-size: 1.6em;
+  font-weight: 700;
+}
+.Statistic__description {
+  font-size: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+.Statistic__header {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+.Statistic__answers :first-child {
+  margin-bottom: 10px;
+}
+.Statistic__pie {
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+}
+.Statistic__button {
+  margin-top: 30px;
+  padding: 10px 30px;
+  color: #fff;
+  font-size: 1em;
+  background-color: #224122;
+  border-radius: 5px;
+  -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.Statistic__button:hover {
+  color: #000;
+  background-color: #88a788;
+}/*# sourceMappingURL=Statistic.css.map */

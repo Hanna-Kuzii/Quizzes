@@ -1,9 +1,9 @@
-@charset "UTF-8";
 .Question__header {
   margin: 20px 0;
   font-size: 1.4em;
 }
 .Question__answers {
+  padding: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15,12 +15,11 @@
       flex-wrap: wrap;
 }
 .Question__answer_radiobutton {
-  display: none; /* Приховати оригінальну радіокнопку */
+  display: none;
 }
 .Question__answer_radiobutton + label {
   position: relative;
-  padding-left: 25px; /* Відступ лейбла від лівого краю */
-  cursor: pointer;
+  padding-left: 25px;
 }
 .Question__answer_radiobutton + label:before {
   content: "";

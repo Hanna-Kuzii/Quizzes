@@ -4,14 +4,14 @@ export const Question = ({ question, selectedAnswer, onAnswerChange }) => {
     ...question.incorrect_answers,
     question.correct_answer,
   ].sort();
-
+  const inputElement = document.querySelector(".Question__answers");
   return (
     <>
       <div className="Question">
         <div className="Question__header">{question.question}</div>
         <div className="Question__answers">
           {answers.map((answer, index) => (
-            <div key={index}  className="Question__answer">
+            <div key={index} className="Question__answer">
               <input
                 type="radio"
                 id={`answer${index}`}
@@ -19,7 +19,10 @@ export const Question = ({ question, selectedAnswer, onAnswerChange }) => {
                 className="Question__answer_radiobutton"
                 value={answer}
                 checked={answer === selectedAnswer}
-                onChange={() => onAnswerChange(answer)}
+                onChange={() => {
+                  onAnswerChange(answer);
+                  inputElement.classList.remove("question__button_red");
+                }}
               />
               <label for={`answer${index}`} className="Question__answer_text">
                 {answer}

@@ -39,7 +39,6 @@
     display: inline-block; /* Показувати як блочний елемент, але без відступів */
     font-size: 1em;
     border-radius: 4px; /* Закруглені кути */
-    cursor: pointer;
     transition: background-color 0.3s ease;
     &:hover {
       background-color: #275A29; /* Колір фону при наведенні курсора */

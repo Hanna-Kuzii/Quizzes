@@ -1,5 +1,6 @@
 @import "../loader.css";
 .Home {
+  position: relative;
   text-align: center;
 }
 .Home__header {
@@ -22,13 +23,33 @@
   font-size: 1.1em;
   font-weight: 500;
   border-radius: 4px;
-  cursor: pointer;
   -webkit-transition: background-color 0.3s ease, -webkit-transform 0.3s ease;
   transition: background-color 0.3s ease, -webkit-transform 0.3s ease;
   transition: background-color 0.3s ease, transform 0.3s ease;
   transition: background-color 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 .Home .random-quiz__button:hover {
+  background-color: #70bf73;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.Home__statistic {
+  position: absolute;
+  left: 10px;
+  padding: 10px 20px;
+  background-color: #81c884;
+  border: none;
+  color: white;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 600;
+  border-radius: 5px;
+  -webkit-transition: background-color 0.3s ease, -webkit-transform 0.3s ease;
+  transition: background-color 0.3s ease, -webkit-transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+.Home__statistic:hover {
   background-color: #70bf73;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);

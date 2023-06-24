@@ -6,6 +6,7 @@ import { Home } from "./components/Home/Home";
 import { Route, Routes, Navigate } from "react-router-dom";
 import { Play } from "./components/Play/Play";
 import { Finish } from "./components/Finish/Finish";
+import { Statistic } from "./components/Statistic/Statistic";
 
 function App() {
   const [test, setTest] = useState([]);
@@ -18,8 +19,11 @@ function App() {
   const [startTime, setStartTime] = useState(null);
   const [endTime, setEndTime] = useState(null);
   const [elapsedTime, setElapsedTime] = useState(null);
-
-console.log(correctAnswers, inCorrectAnswers)
+  const [statQuizzes, countStatQuizzes] = useState(0);
+  const [statQuestions, countStatQuestions] = useState(0);
+  const [statTime, countStatTime] = useState(0);
+  const [statCorrectAnswers, setStatCorrectAnswers] = useState(0);
+  const [statInCorrectAnswers, setStatInCorrectAnswers] = useState(0);
 
   function getRandomNumber() {
     const min = 9;
@@ -79,8 +83,9 @@ console.log(correctAnswers, inCorrectAnswers)
     if (startTime && endTime) {
       const elapsed = endTime - startTime;
       setElapsedTime(elapsed);
+      countStatTime(statTime + elapsedTime);
     }
-  }, [startTime, endTime]);
+  }, [startTime, endTime, elapsedTime]);
 
   const startTest = () => {
     const currentTime = new Date().getTime();
@@ -118,7 +123,14 @@ console.log(correctAnswers, inCorrectAnswers)
               setCorrectAnswers={setCorrectAnswers}
               inCorrectAnswers={inCorrectAnswers}
               setInCorrectAnswers={setInCorrectAnswers}
-              startTest={startTest}
+              statCorrectAnswers={statCorrectAnswers}
+              setStatCorrectAnswers={setStatCorrectAnswers}
+              statInCorrectAnswers={statInCorrectAnswers}
+              setStatInCorrectAnswers={setStatInCorrectAnswers}
+              statQuizzes={statQuizzes}
+              countStatQuizzes={countStatQuizzes}
+              statQuestions={statQuestions}
+              countStatQuestions={countStatQuestions}
               endTest={endTest}
             />
           }
@@ -133,6 +145,19 @@ console.log(correctAnswers, inCorrectAnswers)
               setCorrectAnswers={setCorrectAnswers}
               setInCorrectAnswers={setInCorrectAnswers}
               elapsedTime={elapsedTime}
+              statTime={statTime}
+            />
+          }
+        />
+        <Route
+          path="/statistic"
+          element={
+            <Statistic
+              statCorrectAnswers={statCorrectAnswers}
+              statInCorrectAnswers={statInCorrectAnswers}
+              statQuizzes={statQuizzes}
+              statQuestions={statQuestions}
+              statTime={statTime}
             />
           }
         />
