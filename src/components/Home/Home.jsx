@@ -1,12 +1,8 @@
 import "./Home.css";
 import { Link } from "react-router-dom";
 import { List } from "../List/List";
-// import App from "../../App";
 
 export const Home = ({ tests, setChoosedQiuz, startTest }) => {
-  // const handleButtonClick = () => {
-  //   App.getTests();
-  // };
   return (
     <>
       <div className="Home">

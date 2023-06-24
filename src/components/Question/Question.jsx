@@ -1,4 +1,5 @@
 import "./Question.css";
+import he from 'he';
 export const Question = ({ question, selectedAnswer, onAnswerChange }) => {
   const answers = [
     ...question.incorrect_answers,
@@ -8,7 +9,7 @@ export const Question = ({ question, selectedAnswer, onAnswerChange }) => {
   return (
     <>
       <div className="Question">
-        <div className="Question__title">{question.question}</div>
+        <div className="Question__title">{he.decode(question.question)}</div>
         <div className="Question__answers">
           {answers.map((answer, index) => (
             <div key={index} className="Question__answer">
@@ -25,7 +26,7 @@ export const Question = ({ question, selectedAnswer, onAnswerChange }) => {
                 }}
               />
               <label for={`answer${index}`} className="Question__answer_text">
-                {answer}
+                {he.decode(answer)}
               </label>
             </div>
           ))}

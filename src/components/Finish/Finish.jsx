@@ -13,7 +13,6 @@ export const Finish = ({
     setCorrectAnswers(0);
     setInCorrectAnswers(0);
   }
-  console.log(statTime, "fiiinnn statt", elapsedTime);
   return (
     <>
       <div className="Finish">
