@@ -2,7 +2,6 @@ import "./Statistic.css";
 import { Link } from "react-router-dom";
 import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from "react-chartjs-2";
-import { useEffect } from "react";
 
 Chart.register(ArcElement, Tooltip, Legend);
 

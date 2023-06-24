@@ -161,6 +161,7 @@ function App() {
             />
           }
         />
+        <Route path='*' element={<h1 className="App__title">Page not found</h1>}/>
       </Routes>
     </div>
   );
