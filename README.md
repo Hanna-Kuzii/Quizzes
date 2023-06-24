@@ -1,5 +1,5 @@
 # Quizzes
-[DEMO LINK](https://hanna-kuzii.github.io/nerdysoft_test-task/)
+[DEMO LINK](https://hanna-kuzii.github.io/Quizzes/)
 
 # Installing
 
