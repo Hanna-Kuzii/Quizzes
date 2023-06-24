@@ -1,5 +1,5 @@
 {
-  "homepage": "http://Hanna-Kuzii.github.io/quizzes",
+  "homepage": "http://Hanna-Kuzii.github.io/Quizzes",
   "name": "quizzes",
   "version": "0.1.0",
   "private": true,
@@ -44,6 +44,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^5.0.0"
+    "gh-pages": "^5.0.0",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }
